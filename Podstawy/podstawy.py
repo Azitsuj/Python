@@ -140,3 +140,239 @@ koniec = 'abc'
 print('abc'+'\n'+'csa', end=koniec)
 print('kolejny napis')
 
+imie = 'Konrad'
+print((imie + ' ') * 3)
+
+# P16 konwersja liczby do wartosci logicznej
+liczba = 7
+flaga = bool(liczba)
+print(flaga)
+
+# P25 stawka netto/brutto pracownika
+wynagrodzenieN = 5500
+godziny = 168
+podatek = 0.19
+stawkaZaGodzineN = round(wynagrodzenieN / godziny, 2)
+stawkaZaGodzineB = round((wynagrodzenieN * (1 + podatek)) / godziny, 2)
+print('stawka za godzine brutto: ' + str(stawkaZaGodzineB) + ' zl')
+print('stawka za godzine netto: ' + str(stawkaZaGodzineN) + ' zl')
+print('stawka za godzine netto:', str(stawkaZaGodzineN), 'zl')
+
+# P26 prawo de Morgana
+"""q = bool(input('podaj q '))
+
+dM1 = not( p and q )
+dM2 = not p or not q
+print(dM1 == dM2)
+"""
+
+# P27
+print('a' and 'b')
+print('' and 'a')
+a = 0
+b = 1
+c = 0
+G1 = not a and not b and not c
+G2 = not a and not b and c
+G3 = not a and b and not c
+G4 = a and not b and not c
+
+GRes = G1 or G2 or G3 or G4
+print('not a', not a)
+print('not b', not b)
+print('not c', not c)
+print('a or b or c =', a or b or c)
+print('G1',G1)
+print('G2',G2)
+print('G3',G3)
+print('G4',G4)
+print('GRes',GRes)
+
+znak = 'a'
+# ord - przejscie ze znaku na kod ASCII
+kod = ord(znak)
+print(znak, kod)
+# chr - przejscie z ASCII na znak
+print(chr(kod))
+
+# P28 pierwiastek ntego stopnia
+x = -17
+pierwiastek = x ** (1/2)
+print(pierwiastek)
+print(type(pierwiastek))
+im = 1j
+multi = (-17) ** (1/2)
+liczba = multi * im
+print(liczba)
+
+# P29 17 / 7
+Z = 17 % 7
+print(Z)
+print('Wynik:',Z ** 2 + 3 * Z)
+
+# P30
+print((str(1.2e+3+24.5)+';')*20)
+print((str(1.2e+3+24.5)+';')*19 + str(1.2e+3+24.5))
+
+print('C:\\Dokumenty\\nowy dokument')
+print(' text \' text \"b dsad')
+# print('\a')
+
+# P35
+# imie = input('Podaj imie: ')
+print('Hello '+imie+'!')
+
+# P38
+"""
+P = float(input('Podaj stopę procentową: '))
+N = float(input('Podaj liczbę miesięcy: '))
+res = round(SPK * (1 + P/100) ** (N/12),2)
+print('Do spłaty: ' + str(res) + ' zł')
+"""
+txt = 'napis'
+print(txt[0])
+print(txt[4])
+print(txt[len(txt)-1])
+""" to polecenie zwroci blad
+txt[1] = b """
+print(txt.capitalize())
+txt2 = 'ala ma kota a kot ma ale'
+print(txt2.count('kot'))
+print(txt2.count(' kot '))
+
+"""
+wiek = input('Podaj wiek: ')
+if(wiek.isdigit()):
+    print('jest ok')
+    wiek = int(wiek)
+else:
+    print('błędny wiek')
+"""
+napis = 'abc'
+lista = ['1','2','3','4','5']
+print(napis.join(lista))
+txt2 = txt2.replace('kot','pies')
+print(txt2)
+print(txt2.split('pies'))
+data='2010-02-05'
+lista = data.split('-')
+print(lista)
+print(lista[1])
+
+#
+# Listy
+#
+
+lista = [2,3.14,'a','abc']
+print(lista)
+print(lista[3])
+lista.append('nowy element')
+print(lista)
+print(lista[1:])
+print(lista[:4])
+print(lista[1:3])
+lista[2] = 'a2'
+print(lista)
+
+ola = ['O', 'L', 'A']
+imiona = ['Ala', ola, 'Ela']
+nazwiska = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+ListaList = [imiona, nazwiska]
+print(str(ListaList[0][1][0:]) + ListaList[1][1])
+print(nazwiska[0 :: 2])
+
+nazwiska *= 2
+print(nazwiska)
+# nazwiska.clear()
+print(nazwiska)
+# del(nazwiska)
+print(len(nazwiska))
+print(len(ListaList[0]))
+print(nazwiska[0])
+del(nazwiska[0])
+print(nazwiska[0])
+nazwiska.insert(1, 'wartość')
+print(nazwiska)
+print(('A' or 'B') in nazwiska)
+
+print(list('napis'))
+print(str(list('napis')))
+L = ['a', 2, 3, 2]
+print(L.index(2))
+print(L)
+L.reverse()
+print(L)
+num = [11, 3, 5, 6, 2, 9, 4, 8]
+num.sort()
+print(num)
+
+# P lista trzech produktow
+"""
+Arty = ['chleb', 'mleko']
+Ceny = [3.14, 10]
+iloscCh = float(input('Ile chleba: '))
+iloscM = float(input('Ile mleka: '))
+Ilosc = [iloscCh, iloscM]
+doZaplaty = Ceny[0] * Ilosc[0] + Ceny[1] * Ilosc[1]
+print('Do zaplaty:', round(doZaplaty, 2), 'zł')
+"""
+#
+# Krotki / tuple
+#
+
+# nie polecany sposob tworzenia krotki/tuple
+krotka = 1, 2, 3
+print(krotka)
+
+krotka = (1, 'abc', True)
+print(krotka)
+print(len(krotka))
+print(krotka[1])
+# krotka[1] = 2 - nie mozna przypisywac do krotek
+A = list(krotka)
+A[1] = 2
+print(A)
+krotka = krotka[:2]
+print(krotka)
+
+# P43 Data waznosci artykulu
+"""
+DataW1 = ('01', '01', 2017)
+DataW2 = ('23', '10', 2018)
+DataW3 = ('15', '12', 2019)
+Produkty = (DataW1, DataW2, DataW3)
+nrProd = int(input('Podaj numer produktu: ')) - 1
+if nrProd < 0 or nrProd > 2:
+    print('Zły numer produktu!')
+else:
+    print('Data ważności artykułu:', str(Produkty[nrProd][0])+ '-' + str(Produkty[nrProd][1]) + '-' + str(Produkty[nrProd][2]))
+"""
+
+#
+# Slowniki
+#
+
+S = {'a': 1, 1: 'jeden'}
+print(S['a'])
+S['a'] = 3
+print(S['a'])
+print(S)
+S1 = S.copy()
+print(S1)
+print(1 in S.values())
+
+listaX = ['a', 'b', 'c', 'd']
+romanCov = {1:'I', 2:'II', 3:'III', 4:'IV', 5:'V', 6:'VI', 7:'VII', 8:'VIII', 9:'IX'}
+"""
+dec = int(input('Podaj cyfrę dziesiętną: '))
+if dec in romanCov.keys():
+    print(romanCov[dec])
+else:
+    print('Zła cyfra!')
+"""
+romanCov = {1:'I', 2:'II', 3:'III', 4:'IV', 5:'V', 6:'VI', 7:'VII', 8:'VIII', 9:'IX'}
+romanCov2 = {0:'0', 1:'X'}
+romanCov.update(romanCov2)
+print(romanCov)
+print('0' in romanCov.values())
+
