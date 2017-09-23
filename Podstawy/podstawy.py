@@ -393,3 +393,144 @@ C = A & B
 D = A | B
 print(C)
 print(D)
+
+#
+# Python D2
+#
+
+# Zbiory
+zbior1 = set(['k', 1, False])
+zbior2 = frozenset([1, 2, 3])
+zbior1.add(21)
+zbior1.add('k')
+print(zbior1)
+print('k' in zbior1)
+print(set([1, False, 2]) <= zbior1)
+print(len(zbior1))
+
+A =set([1, 2, 3, 4, 5])
+B = set([2, 4, 6, 8, 10])
+print(A | B) # suma
+print(A & B) # czesc wspolna
+print(A - B) # roznica
+print(A ^ B) # roznica symetryczna
+
+#import random
+from random import randint
+print(randint(1, 49))
+
+losowanie = set()
+i = len(losowanie)
+print(i)
+while i < 6:
+    los = randint(1, 49)
+    losowanie.add(los)
+    print(los)
+    i = len(losowanie)
+print(losowanie)
+
+
+wylosowane = set()
+los1 = randint(1, 49)
+wylosowane.add(los1)
+los2 = randint(1, 49)
+wylosowane.add(los2)
+los3 = randint(1, 49)
+wylosowane.add(los3)
+los4 = randint(1, 49)
+wylosowane.add(los4)
+los5 = randint(1, 49)
+wylosowane.add(los5)
+los6 = randint(1, 49)
+wylosowane.add(los6)
+
+if(len(wylosowane) == 6):
+    print(wylosowane)
+elif(len(wylosowane) == 5):
+    los7 = randint(1, 49)
+    wylosowane.add(los7)
+    print(wylosowane)
+elif(len(wylosowane) == 4):
+    los8 = randint(1, 49)
+    wylosowane.add(los8)
+    los9 = randint(1, 49)
+    wylosowane.add(los9)
+    print(wylosowane)
+else:
+    print("Masz pecha!")
+
+a = randint(1, 100)
+dzielnik = randint(2, 5)
+print("Liczba " + str(a) + " jest podzielna przez " + str(dzielnik)) if (a % dzielnik == 0) else print("Liczba " + str(a) + " nie jest podzielna przez " + str(dzielnik))
+
+# P54
+
+lista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+# index = int(input("Podaj numer indeksu wiekszy od 0: "))
+index = randint(1, 12)
+print(index)
+index -= 1
+if ((index <= len(lista) - 1) and (index >= 0)):
+    print(lista[index])
+else:
+    print("Zly numer indeksu, podaj jeszcze raz!")
+    
+lista = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+# index = int(input("Podaj numer indeksu wiekszy od 0: "))
+index = randint(1, 12)
+print(index)
+if ((index <= len(lista)) and (index > 0)):
+    print(lista[index -1])
+else:
+    print("Zly numer indeksu, podaj jeszcze raz!")
+
+# P55
+lista = [1, 2, 5, 7]
+if lista[0] > 0 and lista[1] > 0:
+    print("Pierwszy i drugi element jest dodatni")
+elif lista[0] > 0 and lista[1] <= 0:
+    print("Pierwszy element jest dodatni, a drugi nie")
+elif lista[0] <= 0 and lista[1] > 0:
+    print("Pierwszy element nie jest dodatni, a drugi jest")
+else:
+    print("Oba elementy sa niedodatnie")
+    
+# P56
+#liczba =int(input("Podaj liczbe: "))
+liczba = randint(1, 100)
+print("Liczba " + str(liczba) + " jest parzysta") if (liczba % 2 == 0) else print("Liczba " + str(liczba) + " jest nieparzysta")
+
+# P56
+flaga = True
+napis1 = str(input("Podaj pierwszy napis: "))
+napis1L = napis1.lower()
+napis2 = str(input("Podaj drugi napis: "))
+napis2L = napis2.lower()
+print("Napis1: " + str(napis1L) + ", napis2: " + str(napis2L))
+if (not napis1.isdigit()):
+    print('ok')
+else:
+    flaga = False
+if (not napis2.isdigit()):
+    print('ok')
+else:
+    flaga = False
+
+if flaga:
+    """
+    if napis1L > napis2L:
+        print(napis1L + " jest wiekszy niz " + napis2L)
+    elif napis1L == napis2L:
+        print(napis1L + " = " + napis2L)
+    else:
+        print("2 jest wiekszy niz 1")
+    """
+    if napis1.lower() > napis2.lower():
+        print("A > B")
+    elif napis1.lower() == napis2.lower():
+        print("A = B")
+    else:
+        print("A < B")
+else:
+    print('błąd')
+
