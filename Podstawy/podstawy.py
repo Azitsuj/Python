@@ -376,3 +376,20 @@ romanCov.update(romanCov2)
 print(romanCov)
 print('0' in romanCov.values())
 
+a = True
+print(not a)
+
+a = 3.14
+pi = 'Pi = ' + str(a)
+print(type(pi))
+a='3'
+b = int(a)
+print(type(a))
+print(type(b))
+
+A = set([1, 2])
+B = set([1, 3])
+C = A & B
+D = A | B
+print(C)
+print(D)
