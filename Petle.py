@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from random import randint
+from random import choice
 from math import factorial
 import time
 
@@ -206,3 +207,61 @@ print(p)
 '''
 lotto = (factorial(50)/(factorial(5)*factorial(50-5)))
 print('{:>10.0f}'.format(lotto))
+
+# sortowanie podanych przez użytkownika kart z talii
+'''
+kards = ['a', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'j', 'q', 'k']
+num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+choice = ''
+while(True):
+    choice = input('Podaj nazwę karty: ')
+    if (choice.isdigit()):
+        choice = int(choice)
+        if (not (choice >= 2 and choice <= 10)):
+            print('brak takiej karty')
+            continue
+    else:
+        choice = choice.lower()
+    if (choice in kards):
+        if(num[kards.index(choice)] < 4):
+            num[kards.index(choice)] += 1
+        else:
+            print('za dużo kart')
+    elif (choice.upper() == 'E'):
+        break
+    else:
+        print('nie ma takiej karty')
+print(num)
+txt = '['
+for i, v in enumerate(kards):
+    if (num[i] != 0):
+        txt += ((str(v) + ', ') * num[i])
+txt += ']'
+print(txt.replace(', ]',']'))
+'''
+
+# sortowanie losowych kart z talii
+kards = ['a', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'j', 'q', 'k']
+num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+choice = ''
+# x = int(input('Podaj ilość kart do wylosowania > 0: '))
+x = input('Podaj ilość kart do wylosowania > 0: ')
+if x.isdigit() == False or int(x) > 52:
+    print('Podałeś złą ilość kart lub literę!')
+else:
+    x = int(x)
+    while(x > 0):
+        c = randint(0, 12)
+        if(num[c] < 4):
+            num[c] += 1
+        else:
+            continue
+        x -= 1
+    print(num)
+    txt = '['
+    for i, v in enumerate(kards):
+        if (num[i] != 0):
+            txt += ((str(v) + ', ') * num[i])
+    txt += ']'
+    print(txt.replace(', ]',']'))
+
