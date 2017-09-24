@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from random import randint
+from math import factorial
+import time
 
 losowanie = set()
 iter = 1
@@ -158,3 +160,49 @@ Z1 = set(L1)
 Z2 = set(L2)
 Z3 = Z1 & Z2
 print(list(Z3))
+
+L = []
+for x in range(20):
+    L.append(x)
+print(L)
+
+# losowanie totolotka
+'''
+start_time = time.time()
+losowanie = set()
+wybrane = set()
+ilosc = input('Podaj ilość liczb: ')
+while (len(wybrane) < int(ilosc)):
+    los = randint(1, 50)
+    wybrane.add(los)
+print('Wybrane liczby to: ' + str(wybrane))
+iter = 0
+rekord = 0
+while (len(losowanie) < len(wybrane)):
+    los = randint(1, 50)
+    if los in wybrane:
+        # print('Nr iteracji: ' + str(iter) + ', liczba: ' + str(los))
+        iter += 1
+        losowanie.add(los)
+        if len(losowanie) > rekord:
+            rekord = len(losowanie)
+    else:
+        iter += 1
+        losowanie = set()
+    if iter % 100000 == 0:
+        n = (iter / 100000) * 0.1
+        # print('Iteracja %02.1f' % n + 'mln w toku, minęło czasu: %3.2f sekund' % (time.time() - start_time))
+        print('Iteracja ' + '{:>4.1f}'.format(n) + ' mln w toku, minęło czasu: ' + '{:>8.3f}'.format(time.time() - start_time) + ' sekund, najwięcej trafionych liczb: ' + str(rekord))
+        rekord = 0
+else:
+    print('Liczba iteracji wyniosla: %9d' % (iter))
+    print('Wylosowane liczby: ' + str(losowanie))
+    print("-- %s seconds --" % (time.time() - start_time))
+'''
+'''
+b = int(input('Podaj z ilu liczb: '))
+p = (factorial(b)/(factorial(a)*factorial(b-a)))
+print(p)
+'''
+lotto = (factorial(50)/(factorial(5)*factorial(50-5)))
+print('{:>10.0f}'.format(lotto))
