@@ -501,6 +501,7 @@ liczba = randint(1, 100)
 print("Liczba " + str(liczba) + " jest parzysta") if (liczba % 2 == 0) else print("Liczba " + str(liczba) + " jest nieparzysta")
 
 # P56
+'''
 flaga = True
 napis1 = str(input("Podaj pierwszy napis: "))
 napis1L = napis1.lower()
@@ -533,4 +534,34 @@ if flaga:
         print("A < B")
 else:
     print('błąd')
+'''
+dict = {1:'jeden', 2:'dwa', 3:'trzy', 4:'cztery'}
+print(dict.popitem())
+print(dict)
 
+str = 'asfgrt'
+print(str.index('f'))
+str1 = str.capitalize()
+print(str1)
+L = ['a', 'b', 3, 6, 'd', 8]
+print(L[:3])
+print(L.count(3))
+L.insert(1, 2)
+print(L)
+L[0] = 0
+L += 'x'
+print(L)
+print(len(L))
+del L[1]
+print("po skasowaniu ", end='')
+print(L)
+K = tuple(enumerate(L))
+print(K)
+print(L[::2])
+M = tuple(L)
+print(M)
+print(M[:3])
+print(dict.get(1))
+dict.pop(1)
+print(dict)
+print(2 in dict.keys())

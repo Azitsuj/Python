@@ -256,7 +256,7 @@ def frange(start, stop, krok):
     print('|' + 20*'-' + '|')
     while (i < len(L)):
         kel = L[i] + 273.15
-        print('| {:>+6.2f}'.format(L[i]) + '  |  ' + '{:>+6.2f} |'.format(kel))
+        print('| {:>+6.2f}'.format(L[i]) + '  |  ' + '{:>+7.2f} |'.format(kel))
         # print('|%+8.1f|%-8.2f|' % (L[i], kel))
         i += 1
 
@@ -285,10 +285,10 @@ print(cutting(95, generator()))
 def lustrzana(liczba):
     x = str(liczba)
     i = 0
+    flag = 'lustrzana'
     while (i < (len(x) / 2)):
         if(x[i] == x[len(x) - 1 - i]):
             i += 1
-            flag = 'lustrzana'
         else:
             flag = 'nie jest lustrzana'
             break
